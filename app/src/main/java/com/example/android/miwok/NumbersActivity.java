@@ -28,6 +28,7 @@ public class NumbersActivity extends AppCompatActivity {
 
         LinearLayout rootView = (LinearLayout) findViewById(R.id.rootView);
 
+        // loop through each word in the words arraylist and add them as a TextView in the rootView
         for (int i = 0; i < words.size(); i++) {
             TextView wordView = new TextView(this);
             wordView.setText(words.get(i));
