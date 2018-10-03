@@ -53,7 +53,13 @@ public class WordAdapter extends ArrayAdapter<Word> {
         // set this text on the number TextView
         defaultTextView.setText(currentWord.getDefaultTranslation());
 
-        // Return the whole list item layout (containing 2 TextViews)
+        // Find the ImageView in the list_item.xml layout with the ID version_number
+        ImageView imageView = (ImageView) listItemView.findViewById((R.id.list_item_image));
+        // Get the version number from the current Word object and
+        // set this resource id on the number ImageView
+        imageView.setImageResource(currentWord.getmImageResourceId());
+
+        // Return the whole list item layout (containing 1 ImageView and 2 TextViews)
         // so that it can be shown in the ListView
         return listItemView;
     }
