@@ -57,7 +57,11 @@ public class WordAdapter extends ArrayAdapter<Word> {
         ImageView imageView = (ImageView) listItemView.findViewById((R.id.list_item_image));
         // Get the version number from the current Word object and
         // set this resource id on the number ImageView
-        imageView.setImageResource(currentWord.getmImageResourceId());
+        if (currentWord.getmImageResourceId() == 0){
+            imageView.setVisibility(View.INVISIBLE);
+        } else {
+            imageView.setImageResource(currentWord.getmImageResourceId());
+        }
 
         // Return the whole list item layout (containing 1 ImageView and 2 TextViews)
         // so that it can be shown in the ListView
