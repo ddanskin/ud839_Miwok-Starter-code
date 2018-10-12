@@ -64,7 +64,7 @@ public class WordAdapter extends ArrayAdapter<Word> {
 
             // Get the version number from the current Word object and
             // set this resource id on the number ImageView
-            imageView.setImageResource(currentWord.getmImageResourceId());
+            imageView.setImageResource(currentWord.getMImageResourceId());
         } else {
             imageView.setVisibility(View.GONE);
         }
@@ -72,6 +72,7 @@ public class WordAdapter extends ArrayAdapter<Word> {
         View textContainer = listItemView.findViewById(R.id.text_container);
         int color = ContextCompat.getColor(getContext(), mColorResourceId);
         textContainer.setBackgroundColor(color);
+
         // Return the whole list item layout (containing 1 ImageView and 2 TextViews)
         // so that it can be shown in the ListView
         return listItemView;
