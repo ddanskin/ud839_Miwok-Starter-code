@@ -38,6 +38,7 @@ public class ColorsActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l){
                 Word word = words.get(i);
+                releaseMediaPlayer();
                 mMediaPlayer = MediaPlayer.create(ColorsActivity.this, word.getMSoundResourceId());
                 mMediaPlayer.start();
             }
