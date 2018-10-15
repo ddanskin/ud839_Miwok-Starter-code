@@ -42,6 +42,13 @@ public class ColorsActivity extends AppCompatActivity {
                 mMediaPlayer.start();
             }
         });
+
+        mMediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                releaseMediaPlayer();
+            }
+        });
     }
 
     /**
