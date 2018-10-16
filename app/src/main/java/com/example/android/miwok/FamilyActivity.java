@@ -51,10 +51,10 @@ public class FamilyActivity extends AppCompatActivity {
                 releaseMediaPlayer();
                 mMediaPlayer = MediaPlayer.create(FamilyActivity.this, word.getMSoundResourceId());
                 mMediaPlayer.start();
+                mMediaPlayer.setOnCompletionListener(mCompletionListener);
             }
         });
 
-        mMediaPlayer.setOnCompletionListener(mCompletionListener);
     }
 
     @Override

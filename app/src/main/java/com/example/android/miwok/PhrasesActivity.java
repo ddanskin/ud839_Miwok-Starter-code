@@ -51,10 +51,10 @@ public class PhrasesActivity extends AppCompatActivity {
                 releaseMediaPlayer();
                 mMediaPlayer = MediaPlayer.create(PhrasesActivity.this, word.getMSoundResourceId());
                 mMediaPlayer.start();
+                mMediaPlayer.setOnCompletionListener(mCompletionListener);
             }
         });
 
-        mMediaPlayer.setOnCompletionListener(mCompletionListener);
     }
 
     @Override
@@ -62,7 +62,7 @@ public class PhrasesActivity extends AppCompatActivity {
         super.onStop();
         releaseMediaPlayer();
     }
-    
+
     /**
      * Clean up the media player by releasing its resources.
      */
